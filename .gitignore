@@ -60,3 +60,15 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+Build/
+.DS_Store
+.Trashes
+
+*.xccheckout
+
+# Ignore xcuserdata
+xcuserdata/
+
+# Ignore JetBrains IDEs
+.idea/
