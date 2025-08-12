@@ -13,6 +13,8 @@ public class CopyShare {
     public init(baseURL: String) {
         self.baseURL = URL(string: baseURL)!
         self.session = URLSession.init(configuration: .default)
+        // Not discretionary by default because user files should be uploaded ASAP.
+        self.session.configuration.isDiscretionary = false
     }
     
     /// Upload a file using the PUT HTTP method.
