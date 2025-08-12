@@ -184,7 +184,8 @@ public class CopyShare {
                                 (200...299).contains(resp.statusCode)
             else {
                 print ("server error")
-                return (nil, URLError(.badServerResponse))
+                let resp = resp as? HTTPURLResponse
+                return (nil, URLError(.badServerResponse, userInfo: ["statusCode": resp?.statusCode ?? 0]))
             }
             return (String(data:data, encoding: .utf8), nil)
         } catch let error as URLError {
