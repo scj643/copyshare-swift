@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2041116A2E4A4EC9009FD42D /* copyshare_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2041115E2E4A4EC9009FD42D /* copyshare_swift.framework */; };
+		2091ADA02E4BD8A200A6CFC6 /* party.conf in Resources */ = {isa = PBXBuildFile; fileRef = 2091AD9F2E4BD89D00A6CFC6 /* party.conf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		2041115E2E4A4EC9009FD42D /* copyshare_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = copyshare_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		204111692E4A4EC9009FD42D /* copyshare-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "copyshare-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2091AD9F2E4BD89D00A6CFC6 /* party.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = party.conf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -60,6 +62,7 @@
 		204111542E4A4EC9009FD42D = {
 			isa = PBXGroup;
 			children = (
+				2091AD9F2E4BD89D00A6CFC6 /* party.conf */,
 				204111602E4A4EC9009FD42D /* copyshare-swift */,
 				2041116D2E4A4EC9009FD42D /* copyshare-swiftTests */,
 				2041115F2E4A4EC9009FD42D /* Products */,
@@ -177,6 +180,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2091ADA02E4BD8A200A6CFC6 /* party.conf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
