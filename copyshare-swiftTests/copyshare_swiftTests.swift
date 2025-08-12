@@ -11,7 +11,7 @@ import Foundation
 
 struct copyshare_swiftTests {
 
-    @Test func put() {
+    @Test func put() async {
         // TODO: Implement an environment variable to hold the base url.
         let copyShare = CopyShare.init(baseURL: "https://example.org/")
         let tempDirectoryURL = FileManager.default.temporaryDirectory
@@ -26,13 +26,11 @@ struct copyshare_swiftTests {
             print("Failed to write tmp file")
         }
         do {
-            try copyShare.putFile(localPath: fileURL, remotePath: testPath)
+            let (result, error) = try await copyShare.putFile(localPath: fileURL, remotePath: testPath)
+            assert(error == nil, "Failed to upload with error \(String(describing: error))")
+            print(result ?? "None")
         } catch {
-            print("Failed to upload")
+            assertionFailure("Upload failed")
         }
-        // Sleep so that the task can finish
-        // TODO: Make it so the upload can be awaited on 
-        sleep(30)
     }
-
 }
