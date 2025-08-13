@@ -105,8 +105,6 @@ public class CopyShare {
         }
         formRequest.add(key: "cppwd", value: password)
         request.httpBody = formRequest.httpBody
-        print(formRequest.httpContentTypeHeaderValue)
-        print(String(data: request.httpBody!, encoding: .utf8)!)
         do {
             let (data, resp) = try await  self.session.data(for: request)
             guard let resp = resp as? HTTPURLResponse,
