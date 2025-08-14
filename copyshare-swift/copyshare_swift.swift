@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Avaliable list of checksum types that can be returned.
 public enum CopypartyChecksums: String {
     case no = ""
     case md5 = "md5"
@@ -15,6 +16,7 @@ public enum CopypartyChecksums: String {
     case b2s = "b2s"
 }
 
+/// Responses that should be given when uploading.
 public enum CopypartyUploadAccepts: String {
     case json = "json"
     case url = "url"
@@ -28,7 +30,7 @@ public enum CopypartyFormActions: String {
 }
 
 // from https://theswiftdev.com/easy-multipart-file-upload-for-swift/
-/// Allow Data to have strings appeneded.
+// Allow Data to have strings appeneded.
 extension Data {
     mutating func append(
         _ string: String,
@@ -47,6 +49,8 @@ public struct CopypartyMultipartFormRequest {
     private var body: Data
     private let seperator: String = "\r\n"
     
+    /// Create a multipart form request.
+    /// - Parameter action: The function to use on the multipart upload
     public init(action: CopypartyFormActions) {
         self.body = .init()
         self.boundary = UUID().uuidString
@@ -65,6 +69,10 @@ public struct CopypartyMultipartFormRequest {
         return "Content-Disposition: form-data; name=\"\(key)\""
     }
     
+    /// Add a key value pair to the form
+    /// - Parameters:
+    ///   - key: Key to use
+    ///   - value: Value to use
     public mutating func add(key: String, value: String) {
         appendBoundrySeperator()
         body.append(disposition(key) + seperator)
@@ -76,6 +84,7 @@ public struct CopypartyMultipartFormRequest {
             "multipart/form-data; boundary=\(boundary)"
     }
     
+    /// Formatted http body to put in the request body.
     public var httpBody: Data {
         var httpBodyData = body
         httpBodyData.append("--\(boundary)--\(seperator)")
@@ -86,6 +95,9 @@ public struct CopypartyMultipartFormRequest {
 public class CopyShare {
     public var baseURL: URL
     public var session: URLSession
+    /// Create a CopyShare instance.
+    /// Avoid making multiple instances if you want to use background uploads.
+    /// - Parameter baseURL: The base url to perform actions on.
     public init(baseURL: String) {
         self.baseURL = URL(string: baseURL)!
         self.session = URLSession.init(configuration: .default)
@@ -94,6 +106,11 @@ public class CopyShare {
         self.session.configuration.httpShouldSetCookies = true
     }
     
+    /// Login to the copyparty server at the baseURL
+    /// - Parameters:
+    ///   - username: Optional username. Not used if usernames is unset in the copyparty config. This is not autodetected.
+    ///   - password: Required password
+    /// - Returns: response as a string and error if any.
     public func login(username: String?, password: String) async throws -> (String?, Error?) {
         var request = URLRequest(url: self.baseURL, cachePolicy: .reloadIgnoringLocalCacheData)
         request.httpMethod = "POST"
@@ -119,6 +136,8 @@ public class CopyShare {
         }
     }
     
+    /// Logout from copyparty at the baseURL
+    /// - Returns: Response and error
     public func logout() async throws -> (String?, Error?) {
         var request = URLRequest(url: self.baseURL, cachePolicy: .reloadIgnoringLocalCacheData)
         request.httpMethod = "POST"
@@ -148,6 +167,14 @@ public class CopyShare {
     }
     
     // TODO: Add upload compression option
+    /// Build a URLRequest using the provided arguments
+    /// - Parameters:
+    ///   - path: path relative to the baseURL
+    ///   - accepts: UploadAccepts format to use. Default is json
+    ///   - rand: If not nil give the uploaded file a random name with the given umber of characters
+    ///   - checksum: Which type of checksum to return
+    ///   - lifetime: How long the file should stay uploaded. Must have the `lifetime` volflag set in Copyparty
+    /// - Returns: Built `URLRequest`
     public func buildUploadRequest(path: String, accepts: CopypartyUploadAccepts = .json, rand: Int? = nil, checksum: CopypartyChecksums? = nil, lifetime: UInt128? = nil) throws -> URLRequest {
         var request = try buildBaseRequest(path: path)
         request.setValue(accepts.rawValue, forHTTPHeaderField: "Accept")
@@ -166,7 +193,7 @@ public class CopyShare {
     
     /// Upload a file using the PUT HTTP method.
     ///
-    /// see buildUploadRequest for more info on arguments.
+    /// see `buildUploadRequest` for more info on arguments.
     /// Returns the response or an error. If it's an HTTP error the code is also returned as statusCode on the userInfo
     public func putFile(localPath: URL, remotePath: String, accepts: CopypartyUploadAccepts = .json, rand: Int? = nil, checksum: CopypartyChecksums? = nil, lifetime: UInt128? = nil) async throws -> (String?, Error?)
     {
