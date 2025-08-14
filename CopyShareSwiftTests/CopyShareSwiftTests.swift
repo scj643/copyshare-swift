@@ -1,6 +1,6 @@
 //
-//  copyshare_swiftTests.swift
-//  copyshare-swiftTests
+//  CopyShareSwiftTests.swift
+//  CopyShareSwiftTests
 //
 //  Created by Chloe Surett on 8/11/25.
 //
@@ -9,7 +9,7 @@ import Testing
 @testable import copyshare_swift
 import Foundation
 
-struct copyshare_swiftTests {
+struct CopyShareSwiftTests {
     // TODO: Implement an environment variable to hold the base url.
     let copyShare = CopyShare.init(baseURL: "https://example.org/")
     

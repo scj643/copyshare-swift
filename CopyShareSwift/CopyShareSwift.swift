@@ -1,6 +1,6 @@
 //
-//  copyshare_swift.swift
-//  copyshare-swift
+//  CopyShareSwift.swift
+//  CopyShareSwift
 //
 //  Created by Chloe Surett on 8/11/25.
 //
