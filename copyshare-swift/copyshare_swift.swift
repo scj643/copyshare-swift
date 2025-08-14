@@ -167,6 +167,7 @@ public class CopyShare {
     /// Upload a file using the PUT HTTP method.
     ///
     /// see buildUploadRequest for more info on arguments.
+    /// Returns the response or an error. If it's an HTTP error the code is also returned as statusCode on the userInfo
     public func putFile(localPath: URL, remotePath: String, accepts: CopyShareUploadAccepts = .json, rand: Int? = nil, checksum: CopyShareChecksums? = nil, lifetime: UInt128? = nil) async throws -> (String?, Error?)
     {
         var request: URLRequest
@@ -183,7 +184,7 @@ public class CopyShare {
             else {
                 print ("server error")
                 let resp = resp as? HTTPURLResponse
-                return (nil, URLError(.badServerResponse, userInfo: ["statusCode": resp?.statusCode ?? 0]))
+                return (nil, URLError(.badServerResponse, userInfo: ["statusCode": resp?.statusCode ?? -1]))
             }
             return (String(data:data, encoding: .utf8), nil)
         } catch let error as URLError {
