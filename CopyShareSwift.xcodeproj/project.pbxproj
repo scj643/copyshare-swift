@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2041116A2E4A4EC9009FD42D /* copyshare_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2041115E2E4A4EC9009FD42D /* copyshare_swift.framework */; };
+		2041116A2E4A4EC9009FD42D /* CopyShareSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2041115E2E4A4EC9009FD42D /* CopyShareSwift.framework */; };
 		2091ADA02E4BD8A200A6CFC6 /* party.conf in Resources */ = {isa = PBXBuildFile; fileRef = 2091AD9F2E4BD89D00A6CFC6 /* party.conf */; };
 /* End PBXBuildFile section */
 
@@ -22,20 +22,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2041115E2E4A4EC9009FD42D /* copyshare_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = copyshare_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		204111692E4A4EC9009FD42D /* copyshare-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "copyshare-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2041115E2E4A4EC9009FD42D /* CopyShareSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CopyShareSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		204111692E4A4EC9009FD42D /* CopyShareSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CopyShareSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2091AD9F2E4BD89D00A6CFC6 /* party.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = party.conf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		204111602E4A4EC9009FD42D /* copyshare-swift */ = {
+		204111602E4A4EC9009FD42D /* CopyShareSwift */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "copyshare-swift";
+			path = CopyShareSwift;
 			sourceTree = "<group>";
 		};
-		2041116D2E4A4EC9009FD42D /* copyshare-swiftTests */ = {
+		2041116D2E4A4EC9009FD42D /* CopyShareSwiftTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "copyshare-swiftTests";
+			path = CopyShareSwiftTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2041116A2E4A4EC9009FD42D /* copyshare_swift.framework in Frameworks */,
+				2041116A2E4A4EC9009FD42D /* CopyShareSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,8 +63,8 @@
 			isa = PBXGroup;
 			children = (
 				2091AD9F2E4BD89D00A6CFC6 /* party.conf */,
-				204111602E4A4EC9009FD42D /* copyshare-swift */,
-				2041116D2E4A4EC9009FD42D /* copyshare-swiftTests */,
+				204111602E4A4EC9009FD42D /* CopyShareSwift */,
+				2041116D2E4A4EC9009FD42D /* CopyShareSwiftTests */,
 				2041115F2E4A4EC9009FD42D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,8 +72,8 @@
 		2041115F2E4A4EC9009FD42D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2041115E2E4A4EC9009FD42D /* copyshare_swift.framework */,
-				204111692E4A4EC9009FD42D /* copyshare-swiftTests.xctest */,
+				2041115E2E4A4EC9009FD42D /* CopyShareSwift.framework */,
+				204111692E4A4EC9009FD42D /* CopyShareSwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,9 +91,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2041115D2E4A4EC9009FD42D /* copyshare-swift */ = {
+		2041115D2E4A4EC9009FD42D /* CopyShareSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 204111722E4A4EC9009FD42D /* Build configuration list for PBXNativeTarget "copyshare-swift" */;
+			buildConfigurationList = 204111722E4A4EC9009FD42D /* Build configuration list for PBXNativeTarget "CopyShareSwift" */;
 			buildPhases = (
 				204111592E4A4EC9009FD42D /* Headers */,
 				2041115A2E4A4EC9009FD42D /* Sources */,
@@ -105,18 +105,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				204111602E4A4EC9009FD42D /* copyshare-swift */,
+				204111602E4A4EC9009FD42D /* CopyShareSwift */,
 			);
-			name = "copyshare-swift";
+			name = CopyShareSwift;
 			packageProductDependencies = (
 			);
 			productName = "copyshare-swift";
-			productReference = 2041115E2E4A4EC9009FD42D /* copyshare_swift.framework */;
+			productReference = 2041115E2E4A4EC9009FD42D /* CopyShareSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		204111682E4A4EC9009FD42D /* copyshare-swiftTests */ = {
+		204111682E4A4EC9009FD42D /* CopyShareSwiftTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 204111752E4A4EC9009FD42D /* Build configuration list for PBXNativeTarget "copyshare-swiftTests" */;
+			buildConfigurationList = 204111752E4A4EC9009FD42D /* Build configuration list for PBXNativeTarget "CopyShareSwiftTests" */;
 			buildPhases = (
 				204111652E4A4EC9009FD42D /* Sources */,
 				204111662E4A4EC9009FD42D /* Frameworks */,
@@ -128,13 +128,13 @@
 				2041116C2E4A4EC9009FD42D /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				2041116D2E4A4EC9009FD42D /* copyshare-swiftTests */,
+				2041116D2E4A4EC9009FD42D /* CopyShareSwiftTests */,
 			);
-			name = "copyshare-swiftTests";
+			name = CopyShareSwiftTests;
 			packageProductDependencies = (
 			);
 			productName = "copyshare-swiftTests";
-			productReference = 204111692E4A4EC9009FD42D /* copyshare-swiftTests.xctest */;
+			productReference = 204111692E4A4EC9009FD42D /* CopyShareSwiftTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -155,7 +155,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 204111582E4A4EC9009FD42D /* Build configuration list for PBXProject "copyshare-swift" */;
+			buildConfigurationList = 204111582E4A4EC9009FD42D /* Build configuration list for PBXProject "CopyShareSwift" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -169,8 +169,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2041115D2E4A4EC9009FD42D /* copyshare-swift */,
-				204111682E4A4EC9009FD42D /* copyshare-swiftTests */,
+				2041115D2E4A4EC9009FD42D /* CopyShareSwift */,
+				204111682E4A4EC9009FD42D /* CopyShareSwiftTests */,
 			);
 		};
 /* End PBXProject section */
@@ -213,7 +213,7 @@
 /* Begin PBXTargetDependency section */
 		2041116C2E4A4EC9009FD42D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2041115D2E4A4EC9009FD42D /* copyshare-swift */;
+			target = 2041115D2E4A4EC9009FD42D /* CopyShareSwift */;
 			targetProxy = 2041116B2E4A4EC9009FD42D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -472,7 +472,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		204111582E4A4EC9009FD42D /* Build configuration list for PBXProject "copyshare-swift" */ = {
+		204111582E4A4EC9009FD42D /* Build configuration list for PBXProject "CopyShareSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				204111702E4A4EC9009FD42D /* Debug */,
@@ -481,7 +481,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		204111722E4A4EC9009FD42D /* Build configuration list for PBXNativeTarget "copyshare-swift" */ = {
+		204111722E4A4EC9009FD42D /* Build configuration list for PBXNativeTarget "CopyShareSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				204111732E4A4EC9009FD42D /* Debug */,
@@ -490,7 +490,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		204111752E4A4EC9009FD42D /* Build configuration list for PBXNativeTarget "copyshare-swiftTests" */ = {
+		204111752E4A4EC9009FD42D /* Build configuration list for PBXNativeTarget "CopyShareSwiftTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				204111762E4A4EC9009FD42D /* Debug */,
