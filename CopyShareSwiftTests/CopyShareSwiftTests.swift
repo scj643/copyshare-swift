@@ -10,8 +10,8 @@ import Testing
 import Foundation
 
 struct CopyShareSwiftTests {
-    // TODO: Implement an environment variable to hold the base url.
-    let copyShare = CopyShare.init(baseURL: "https://example.org/")
+    let copyShare = CopyShare.init(baseURL: ProcessInfo.processInfo.environment["COPYPARTY_TEST_URL"]!)
+    
     
     @Test(arguments: [("/testing/test.txt", false)]) func put(testPath: String, shouldError: Bool) async {
         let tempDirectoryURL = FileManager.default.temporaryDirectory

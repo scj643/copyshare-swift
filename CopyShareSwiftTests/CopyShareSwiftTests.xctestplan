@@ -1,0 +1,30 @@
+{
+  "configurations" : [
+    {
+      "id" : "54F659AB-79E2-4269-AE56-E3C4FB9B25F9",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "environmentVariableEntries" : [
+      {
+        "key" : "COPYPARTY_TEST_URL",
+        "value" : "https:\/\/example.org"
+      }
+    ]
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:CopyShareSwift.xcodeproj",
+        "identifier" : "204111682E4A4EC9009FD42D",
+        "name" : "CopyShareSwiftTests"
+      }
+    }
+  ],
+  "version" : 1
+}

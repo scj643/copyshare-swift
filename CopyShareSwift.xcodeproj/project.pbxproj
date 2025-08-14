@@ -24,6 +24,7 @@
 /* Begin PBXFileReference section */
 		2041115E2E4A4EC9009FD42D /* CopyShareSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CopyShareSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		204111692E4A4EC9009FD42D /* CopyShareSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CopyShareSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2073E5B22E4E56D900F1063B /* CopyShareSwiftTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = CopyShareSwiftTests.xctestplan; path = CopyShareSwiftTests/CopyShareSwiftTests.xctestplan; sourceTree = "<group>"; };
 		2091AD9F2E4BD89D00A6CFC6 /* party.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = party.conf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,6 +63,7 @@
 		204111542E4A4EC9009FD42D = {
 			isa = PBXGroup;
 			children = (
+				2073E5B22E4E56D900F1063B /* CopyShareSwiftTests.xctestplan */,
 				2091AD9F2E4BD89D00A6CFC6 /* party.conf */,
 				204111602E4A4EC9009FD42D /* CopyShareSwift */,
 				2041116D2E4A4EC9009FD42D /* CopyShareSwiftTests */,
