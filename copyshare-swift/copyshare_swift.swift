@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CopyShareChecksums: String {
+public enum CopypartyChecksums: String {
     case no = ""
     case md5 = "md5"
     case sha256 = "sha256"
@@ -15,13 +15,13 @@ public enum CopyShareChecksums: String {
     case b2s = "b2s"
 }
 
-public enum CopyShareUploadAccepts: String {
+public enum CopypartyUploadAccepts: String {
     case json = "json"
     case url = "url"
     case length = ""
 }
 
-public enum CopyShareFormActions: String {
+public enum CopypartyFormActions: String {
     case login = "login"
     case logout = "logout"
     // TODO: Implement other methods from https://github.com/9001/copyparty/blob/hovudstraum/copyparty/httpcli.py#L2490
@@ -42,12 +42,12 @@ extension Data {
 }
 
 // Modified from https://theswiftdev.com/easy-multipart-file-upload-for-swift/
-public struct CopyPartyMultipartFormRequest {
+public struct CopypartyMultipartFormRequest {
     private var boundary: String
     private var body: Data
     private let seperator: String = "\r\n"
     
-    public init(action: CopyShareFormActions) {
+    public init(action: CopypartyFormActions) {
         self.body = .init()
         self.boundary = UUID().uuidString
         self.add(key: "act", value: action.rawValue)
@@ -98,7 +98,7 @@ public class CopyShare {
         var request = URLRequest(url: self.baseURL, cachePolicy: .reloadIgnoringLocalCacheData)
         request.httpMethod = "POST"
         request.setValue("json", forHTTPHeaderField: "Accept")
-        var formRequest = CopyPartyMultipartFormRequest(action: .login)
+        var formRequest = CopypartyMultipartFormRequest(action: .login)
         request.setValue(formRequest.httpContentTypeHeaderValue, forHTTPHeaderField: "Content-Type")
         if username != nil {
             formRequest.add(key: "uname", value: username!)
@@ -122,7 +122,7 @@ public class CopyShare {
     public func logout() async throws -> (String?, Error?) {
         var request = URLRequest(url: self.baseURL, cachePolicy: .reloadIgnoringLocalCacheData)
         request.httpMethod = "POST"
-        let formRequest = CopyPartyMultipartFormRequest(action: .logout)
+        let formRequest = CopypartyMultipartFormRequest(action: .logout)
         request.setValue("json", forHTTPHeaderField: "Accept")
         request.setValue(formRequest.httpContentTypeHeaderValue, forHTTPHeaderField: "Content-Type")
         request.httpBody = formRequest.httpBody
@@ -148,7 +148,7 @@ public class CopyShare {
     }
     
     // TODO: Add upload compression option
-    public func buildUploadRequest(path: String, accepts: CopyShareUploadAccepts = .json, rand: Int? = nil, checksum: CopyShareChecksums? = nil, lifetime: UInt128? = nil) throws -> URLRequest {
+    public func buildUploadRequest(path: String, accepts: CopypartyUploadAccepts = .json, rand: Int? = nil, checksum: CopypartyChecksums? = nil, lifetime: UInt128? = nil) throws -> URLRequest {
         var request = try buildBaseRequest(path: path)
         request.setValue(accepts.rawValue, forHTTPHeaderField: "Accept")
         if rand != nil {
@@ -168,7 +168,7 @@ public class CopyShare {
     ///
     /// see buildUploadRequest for more info on arguments.
     /// Returns the response or an error. If it's an HTTP error the code is also returned as statusCode on the userInfo
-    public func putFile(localPath: URL, remotePath: String, accepts: CopyShareUploadAccepts = .json, rand: Int? = nil, checksum: CopyShareChecksums? = nil, lifetime: UInt128? = nil) async throws -> (String?, Error?)
+    public func putFile(localPath: URL, remotePath: String, accepts: CopypartyUploadAccepts = .json, rand: Int? = nil, checksum: CopypartyChecksums? = nil, lifetime: UInt128? = nil) async throws -> (String?, Error?)
     {
         var request: URLRequest
         do {
